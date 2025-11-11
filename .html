@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ファルマテック株式会社</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1581092334494-05b6a3c8fcd1');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-left: 6px solid #0077b6;
+      padding-left: 12px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 250px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .card h4 {
+      margin-top: 0;
+    }
+
+    .contact {
+      background-color: #eef2f3;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 10px 0;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* 💬 開閉ボタン */
+    .chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 10000;
+      transition: background-color 0.3s ease;
+    }
+    .chatbot-toggle:hover {
+      background-color: #005f8a;
+    }
+
+    /* 💬 チャットボックス */
+    .chatbot-frame {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 25vw;
+      height: 60vh;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 9999;
+      display: none; /* 初期は閉じた状態 */
+    }
+
+    @media (max-width: 768px) {
+      .chatbot-frame {
+        width: 90%;
+        height: 70%;
+        right: 5%;
+        bottom: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ファルマテック株式会社</h1>
+    <nav>
+      <a href="#">企業情報</a>
+      <a href="#">製品紹介</a>
+      <a href="#">研究開発</a>
+      <a href="#">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>未来の医療を、いま創る。</h2>
+    <p>最先端のバイオ医薬品と研究技術で、人々の健康と未来に貢献します。</p>
+  </div>
+
+  <section class="section">
+    <h3>事業内容</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>医薬品開発</h4>
+        <p>がん、自己免疫、感染症領域における新薬の研究と臨床開発を推進。</p>
+      </div>
+      <div class="card">
+        <h4>バイオテクノロジー</h4>
+        <p>mRNA、細胞治療など次世代技術の研究と実用化を行っています。</p>
+      </div>
+      <div class="card">
+        <h4>グローバル連携</h4>
+        <p>世界各国の製薬企業・大学と連携し、革新的な医療を追求。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h3>お問い合わせ</h3>
+    <p>〒100-0000 東京都千代田区○○ビル 5F</p>
+    <p>メール: contact@pharmatech.co.jp</p>
+    <p>電話: 03-1234-5678</p>
+  </section>
+
+  <footer>
+    &copy; 2025 ファルマテック株式会社. All rights reserved.
+  </footer>
+
+  <!-- 💬 Difyチャットボット -->
+  <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+  <iframe
+    id="chatbotFrame"
+    class="chatbot-frame"
+    src="https://udify.app/chatbot/dF3JUDnvQqnIwfOI"
+    allow="microphone">
+  </iframe>
+
+  <script>
+    const toggle = document.getElementById('chatbotToggle');
+    const frame = document.getElementById('chatbotFrame');
+    let isOpen = false;
+
+    toggle.addEventListener('click', () => {
+      isOpen = !isOpen;
+      frame.style.display = isOpen ? 'block' : 'none';
+    });
+  </script>
+
+</body>
+</html>
